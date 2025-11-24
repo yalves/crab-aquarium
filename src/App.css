@@ -1,0 +1,55 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.aquarium-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aquarium-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.aquarium-background-next {
+  opacity: 0;
+}
+
+.aquarium-background.fade-out {
+  opacity: 0;
+}
+
+.aquarium-background-next.fade-in {
+  opacity: 1;
+}
+
+.crab {
+  position: absolute;
+  z-index: 2;
+  font-size: 40px;
+  animation: float 3s ease-in-out infinite;
+  transition: opacity 1s ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
